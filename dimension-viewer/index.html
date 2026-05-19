@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCPS Consciousness Widget</title>
+    <meta name="description" content="Interactive 3D consciousness visualization - Journey from Singularity to Source">
+
+    <!-- Widget CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page Layout - Not part of the widget */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .page-header {
+            padding: 1rem 2rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .page-title {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .page-subtitle {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1em;
+        }
+
+        /* Widget Container */
+        .widget-wrapper {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cnscns-widget {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Return Button - Styled outside widget scope */
+        .return-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+        }
+
+        .return-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .return-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Optional Header -->
+    <!-- Header Removed -->
+
+    <!-- Widget Container -->
+    <div class="widget-wrapper">
+        <div id="cnscns-widget"></div>
+    </div>
+
+    <!-- Return to Top Button -->
+    <button class="return-btn" id="returnBtn">
+        ↑ Return to Singularity
+    </button>
+
+    <script>
+        // Show return button when scrolled past 70%
+        setTimeout(() => {
+            const driver = document.querySelector('.scroll-driver');
+            const btn = document.getElementById('returnBtn');
+
+            if (driver && btn) {
+                driver.addEventListener('scroll', () => {
+                    const scrollPct = driver.scrollTop / (driver.scrollHeight - driver.clientHeight);
+                    btn.classList.toggle('visible', scrollPct > 0.7);
+                });
+
+                btn.addEventListener('click', () => {
+                    driver.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        }, 1500);
+    </script>
+
+    <!-- Widget Script -->
+    <script src="cnscns-widget.js"></script>
+</body>
+
+</html>
