@@ -29,7 +29,7 @@
         <header class="profile-card">
             <div class="profile-glow"></div>
             <div class="profile-square-container">
-                <img src="profile_small.jpg" alt="Campton Wilkins" class="profile-square-image">
+                <img src="profile_small.webp" alt="Campton Wilkins" class="profile-square-image">
             </div>
             
             <h1 class="profile-name">Campton Wilkins</h1>
@@ -68,6 +68,16 @@
                     <span class="stat-label">Posts</span>
                 </div>
             </div>
+            
+            <div class="books-promo">
+                <a href="#" class="books-link" onclick="openBooksModal(event)">
+                    <div class="books-images">
+                        <img src="book1.png" alt="Spiritual Cannabis" class="book-cover">
+                        <img src="book2.png" alt="How to Upgrade Your Human" class="book-cover">
+                    </div>
+                    <span class="books-text">get my books for free!</span>
+                </a>
+            </div>
         </header>
 
         <!-- Link Tree Section -->
@@ -95,7 +105,7 @@
             <!-- Microstead Link -->
             <a href="https://microstead.org/" target="_blank" rel="noopener noreferrer" class="tree-link microstead-link" style="--delay: 0.2s">
                 <div class="link-banner">
-                    <img src="microstead.jpg" alt="Microstead">
+                    <img src="microstead.webp" alt="Microstead">
                 </div>
                 <div class="link-inner">
                     <div class="link-icon">
@@ -136,10 +146,26 @@
                     </div>
                 </div>
             </a>
+
+            <!-- Link Template 3 -->
+            <a href="https://www.tiktok.com/@camptons.world" target="_blank" rel="noopener noreferrer" class="tree-link" style="--delay: 0.4s">
+                <div class="link-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                </div>
+                <span class="link-text">Watch on TikTok</span>
+                <div class="link-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </a>
         </nav>
         
         <!-- About Campton Section -->
-        <section class="about-card glass-card" style="--delay: 0.4s">
+        <section class="about-card glass-card" style="--delay: 0.5s">
             <div class="about-image-wrapper">
                 <img src="about-campton.jpg" alt="Campton" class="about-image">
             </div>
@@ -151,10 +177,51 @@
             </div>
         </section>
 
+        <!-- Donate Section -->
+        <div class="donate-wrapper" style="--delay: 0.6s">
+            <details class="donate-details">
+                <summary class="donate-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span>Support My Life & Missions</span>
+                </summary>
+                <div class="donate-content">
+                    <div class="donate-option">
+                        <span class="donate-label">Zelle</span>
+                        <span class="donate-value">campwilkins@gmail.com</span>
+                    </div>
+                    <div class="donate-option">
+                        <span class="donate-label">CashApp</span>
+                        <span class="donate-value">$CamptonsWorld</span>
+                    </div>
+                    <div class="donate-option">
+                        <span class="donate-label">Venmo</span>
+                        <span class="donate-value">@Campton <span class="donate-sub">(7176)</span></span>
+                    </div>
+                </div>
+            </details>
+        </div>
+
         <footer class="footer">
             <p>&copy; <script>document.write(new Date().getFullYear())</script> Campton's World. The Living Cosmos.</p>
         </footer>
     </main>
+
+    <!-- Books Promo Modal -->
+    <div id="booksModal" class="modal-overlay">
+        <div class="modal-box glass-card">
+            <button class="modal-close" onclick="closeBooksModal()" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title">A Gift For You</h3>
+                <p class="modal-text">These books are completely free. If you feel called to support my life, projects, and missions, your donations mean the world to me and help me continue this work.</p>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="triggerDonate()">Donate to Support</button>
+                    <a href="https://drive.google.com/drive/u/0/folders/1zBUmLrd6HmqNtmoi-Z7wh2c2ZPCaaduR" target="_blank" rel="noopener noreferrer" class="btn-secondary" onclick="closeBooksModal()">Continue to Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

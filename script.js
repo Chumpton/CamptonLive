@@ -136,3 +136,22 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
     initTiltEffect();
 });
+
+// Books Modal Functions
+window.openBooksModal = function(e) {
+    if(e) e.preventDefault();
+    document.getElementById('booksModal').classList.add('active');
+};
+
+window.closeBooksModal = function() {
+    document.getElementById('booksModal').classList.remove('active');
+};
+
+window.triggerDonate = function() {
+    closeBooksModal();
+    const details = document.querySelector('.donate-details');
+    if(details) {
+        details.open = true;
+        details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
